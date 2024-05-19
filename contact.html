@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - AnotherLine</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            if (name == "" || email == "" || message == "") {
+                alert("Пожалуйста, заполните все поля.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="AnotherLine Logo">
+                <h1>AnotherLine</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="statistics.html">Статистика</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="contact">
+        <div class="container">
+            <h2>Свяжитесь с нами</h2>
+            <form action="send_telegram.php" method="POST" onsubmit="return validateForm()">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Сообщение:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 AnotherLine. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
